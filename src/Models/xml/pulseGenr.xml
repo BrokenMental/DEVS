@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="pulseGenr" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>inprocess</state>
+        <state>passive</state>
+        <state>active</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>inprocess</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>active</state>
+            <Timeout>5.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>inprocess</state>
+            <outport>outPulse</outport>
+        </lamda>
+        <lamda>
+            <state>active</state>
+            <outport>outPulse</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inStop</inport>
+        <inport>inStart</inport>
+    </inports>
+    <outports>
+        <outport>outPulse</outport>
+        <outport>outPulse</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>inprocess</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>active</StartState>
+                <NextState>active</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Stop</IncomingMessage>
+            <transition>
+                <StartState>active</StartState>
+                <NextState>inprocess</NextState>
+            </transition>
+            <scheduleIndicator>false</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Start</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>active</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

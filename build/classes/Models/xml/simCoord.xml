@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="simCoord" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>waitForOut</state>
+        <state>sendGetOut</state>
+        <state>waitForTN</state>
+        <state>requestTN</state>
+        <state>sendApplyDelt</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>waitForOut</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>sendGetOut</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+        <ta>
+            <state>waitForTN</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>requestTN</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+        <ta>
+            <state>sendApplyDelt</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>sendApplyDelt</state>
+            <outport>outApplyDelt</outport>
+        </lamda>
+        <lamda>
+            <state>requestTN</state>
+            <outport>outNextTN</outport>
+        </lamda>
+        <lamda>
+            <state>sendGetOut</state>
+            <outport>outGetOut</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inOut</inport>
+        <inport>inTN</inport>
+    </inports>
+    <outports>
+        <outport>outApplyDelt</outport>
+        <outport>outNextTN</outport>
+        <outport>outGetOut</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>sendGetOut</StartState>
+                <NextState>waitForOut</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>sendApplyDelt</StartState>
+                <NextState>requestTN</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>requestTN</StartState>
+                <NextState>waitForTN</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Out</IncomingMessage>
+            <transition>
+                <StartState>waitForOut</StartState>
+                <NextState>sendApplyDelt</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>TN</IncomingMessage>
+            <transition>
+                <StartState>waitForTN</StartState>
+                <NextState>sendGetOut</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

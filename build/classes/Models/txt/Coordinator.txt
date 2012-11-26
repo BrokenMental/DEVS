@@ -1,0 +1,6 @@
+ passivate in waitForBid !
+ from sendBidSubmit go to waitForBid !
+ when in passive and receive SensorData  go to sendBidSubmit !
+ after sendBidSubmit then output bidSubmit!
+ hold in sendBidSubmit for time 1.0 !
+ to start passivate in passive !

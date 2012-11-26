@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="DrumEar" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models>
+        <Model>
+            <devs>Drum</devs>
+        </Model>
+        <Model>
+            <devs>Ear</devs>
+        </Model>
+    </Models>
+    <Couplings>
+        <Coupling>
+            <SrcModel>Drum</SrcModel>
+            <outport>outBeat</outport>
+            <DestModel>Ear</DestModel>
+            <inport>inBeat</inport>
+        </Coupling>
+    </Couplings>
+</digraphType>

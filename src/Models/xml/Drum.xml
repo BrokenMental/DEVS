@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="Drum" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>Active</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>Active</state>
+            <Timeout>10.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>Active</state>
+            <outport>outBeat</outport>
+        </lamda>
+    </LamdaSet>
+    <inports/>
+    <outports>
+        <outport>outBeat</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>Active</StartState>
+                <NextState>Active</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext/>
+</atomicType>

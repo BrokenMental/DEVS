@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="waitForTwo" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>passive</state>
+        <state>recvdFirst</state>
+        <state>recvd2nd</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>recvdFirst</state>
+            <Timeout>20.0</Timeout>
+        </ta>
+        <ta>
+            <state>recvd2nd</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>recvdFirst</state>
+            <outport>outFail:2ndNotRecvd</outport>
+        </lamda>
+        <lamda>
+            <state>recvd2nd</state>
+            <outport>outPass:RcvdTwo</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inMsg</inport>
+    </inports>
+    <outports>
+        <outport>outFail:2ndNotRecvd</outport>
+        <outport>outPass:RcvdTwo</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>recvd2nd</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>recvdFirst</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Msg</IncomingMessage>
+            <transition>
+                <StartState>recvdFirst</StartState>
+                <NextState>recvd2nd</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Msg</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>recvdFirst</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

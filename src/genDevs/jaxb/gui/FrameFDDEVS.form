@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Form builder="jigloo" ide="eclipse" laf="org.jvnet.substance.skin.SubstanceOfficeSilver2007LookAndFeel" style="Swing" version="4.0.0">
+<NonVisualComponents>
+		<Component class="UNKNOWN" name="Non-visual components" style="0">
+			<Constraints>
+				<LayoutConstraint/>
+			</Constraints>
+			<SubComponents>
+				<Component class="genDevs.jaxb.coupled.CoupledJAXB" name="%0.%1.%22.coupledJAXB" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%0.%1.%14.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%0.%6.filename" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%1.%23.xml" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Unmarshaller" name="%0.%4.unm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Unmarshaller" name="%0.%0.%23.unm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%1.%15.xml" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%6.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%1.%22.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%0.%1.%15.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%1.%0.%1.%14.packageDir" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%0.%2.%0.%1.%22.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Marshaller" name="%0.%1.%22.nm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="xmlFileStr" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.acims.fddevs.ObjectFactory" name="%1.%14.factory" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%25.xmlFile" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.jaxb.fddevs.AtomicJAXB" name="%1.%23.atJaxb" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%0.%13.filename" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%2.%0.%15.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.StringWriter" name="%0.%1.%22.sw" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Boolean" name="boolean_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="VERSION" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%0.%1.%14.javaPath" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileReader" name="fileReader_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%0.%1.%14.filename" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="packageJavaPath" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%0.%0.%1.%14.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%1.%1.%15.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.jaxb.gui.TableModel_Deltint" name="%1.%23.deltintTab" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%0.%0.%23.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="modelName" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%0.%0.%15.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="[Z" name="[Z_IL1" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.jaxb.gui.TableModel_StateTA" name="%1.%23.tableTA" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%0.%1.%22.javaPath" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Object" name="%0.%7.listData" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%25.javaFile" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Unmarshaller" name="%2.%0.%15.unm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%0.%0.%0.%1.%14.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.StringWriter" name="%0.%1.%14.sw" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%2.%0.%25.packageDir" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="file_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%0.%6.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%0.%13.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%1.%14.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%1.%15.java" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Unmarshaller" name="%2.%0.%23.unm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.acims.fddevs.ObjectFactory" name="%1.%23.factory" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%0.%4.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Boolean" name="boolean_IL1" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="[Z" name="[Z_IL1" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Boolean" name="boolean_IL3" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Boolean" name="boolean_IL2" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%0.%1.%22.filename" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="coupledModelName" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="[Z" name="[Z_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%0.%1.%23.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%23.filename" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%15.filename" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="packageString" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.BufferedReader" name="%1.%1.%15.in" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%2.%0.%1.%22.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Unmarshaller" name="%0.%0.%15.unm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileReader" name="fileReader_IL2" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileReader" name="fileReader_IL1" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.jaxb.gui.TableModel_Deltext" name="%1.%23.deltextTab" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.acims.coupled.ObjectFactory" name="%22.coupledFactory" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="[Z" name="[Z_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.BufferedReader" name="%0.%1.%23.in" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Marshaller" name="%0.%1.%14.nm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.jaxb.fddevs.AtomicJAXB" name="%0.%1.%14.atJaxb" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%13.file" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="packageXmlPath" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Object" name="%0.%3.listData" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%3.%0.%1.%22.packageDir" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.BufferedReader" name="%0.%1.%15.in" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="file_IL1" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="file_IL2" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="file_IL3" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="file_IL4" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="file_IL5" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.util.Vector" name="%1.elems" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.File" name="%0.%2.%0.packageDir" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%2.%0.%23.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="javaFileStr" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.acims.coupled.CouplingType" name="%26.coupling" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+						<Property name="srcModel" type="String" value="class java.lang.String"/>
+						<Property name="destModel" type="String" value="class java.lang.String"/>
+						<Property name="outport" type="String" value="class java.lang.String"/>
+						<Property name="inport" type="String" value="class java.lang.String"/>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="packagePath" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%0.%1.%22.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="%19.str" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.String" name="string_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+			</SubComponents>
+		</Component></NonVisualComponents>
+	<Component class="javax.swing.JFrame" name="this">
+		<Constraints>
+			<Constraint tabTitle="this"/>
+			<LayoutConstraint/>
+		</Constraints>
+		<Layout class="Group">
+			<Property name="autocreateContainerGaps" type="boolean" value="false"/>
+			<Property name="autocreateGaps" type="boolean" value="false"/>
+		</Layout>
+		<Properties>
+			<Property name="layout"/>
+			<Property name="defaultCloseOperation" type="int" value="3"/>
+			<Property name="title" type="String" value="Finite Deterministic (FD) DEVS Workbench (0.5.6)"/>
+		</Properties>
+		<SubComponents>
+			<Component class="javax.swing.JPanel" name="jPanel1">
+				<Constraints>
+					<Constraint tabTitle="jPanel1"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Layout class="Group">
+					<Property name="autocreateContainerGaps" type="boolean" value="false"/>
+					<Property name="autocreateGaps" type="boolean" value="false"/>
+				</Layout>
+				<Properties>
+					<Property name="background" type="Color">
+						<Color blue="ff" green="ff" red="ff"/>
+					</Property>
+					<Property name="layout"/>
+				</Properties>
+				<SubComponents>
+					<Component class="javax.swing.JButton" name="jButtonCreateCoupled">
+						<Constraints>
+							<Constraint tabTitle="jButtonCreateCoupled"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonCreateCoupledActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Generate Coupled Model"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JScrollPane" name="jScrollPane3">
+						<Constraints>
+							<Constraint tabTitle="jScrollPane3"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+						<SubComponents>
+							<Component class="javax.swing.JScrollBar" name="jScrollPane3.horizontalScrollBar">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="javax.swing.JScrollBar" name="jScrollPane3.verticalScrollBar">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="javax.swing.JTextArea" name="jTextArea1">
+								<Constraints>
+									<Constraint tabTitle="jTextArea1"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+									<Property name="columns" type="int" value="20"/>
+									<Property name="lineWrap" type="boolean" value="true"/>
+									<Property name="wrapStyleWord" type="boolean" value="true"/>
+									<Property name="rows" type="int" value="5"/>
+									<Property name="editable" type="boolean" value="false"/>
+									<Property name="preferredSize" type="Dimension">
+										<Dimension value="[183, 64]"/>
+									</Property>
+								</Properties>
+							</Component>
+						</SubComponents>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonSimulate">
+						<Constraints>
+							<Constraint tabTitle="jButtonSimulate"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Simulate Coupled Model"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JScrollPane" name="jScrollPane2">
+						<Constraints>
+							<Constraint tabTitle="jScrollPane2"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+						<SubComponents>
+							<Component class="javax.swing.JScrollBar" name="jScrollPane2.horizontalScrollBar">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="javax.swing.JScrollBar" name="jScrollPane2.verticalScrollBar">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="javax.swing.JList" name="jListComponentFDDEVS">
+								<Constraints>
+									<Constraint tabTitle="jListComponentFDDEVS"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+									<Property name="preferredSize" type="Dimension">
+										<Dimension value="[185, 146]"/>
+									</Property>
+								</Properties>
+							</Component>
+						</SubComponents>
+					</Component>
+					<Component class="javax.swing.JTextField" name="jtfCoupledModelName">
+						<Constraints>
+							<Constraint tabTitle="jtfCoupledModelName"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel6">
+						<Constraints>
+							<Constraint tabTitle="jLabel6"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Coupled Model Name:"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonResetCoupled">
+						<Constraints>
+							<Constraint tabTitle="jButtonResetCoupled"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonResetCoupledActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Reset"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonShowModel">
+						<Constraints>
+							<Constraint tabTitle="jButtonShowModel"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonShowModelActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Show Model"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonLoadModel">
+						<Constraints>
+							<Constraint tabTitle="jButtonLoadModel"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonLoadModelActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Load Model"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonDeleteModel">
+						<Constraints>
+							<Constraint tabTitle="jButtonDeleteModel"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonDeleteModelActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Delete Model"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonMakeIntoCoupled">
+						<Constraints>
+							<Constraint tabTitle="jButtonMakeIntoCoupled"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonMakeIntoCoupledActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Make as Component in Coupled"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JScrollPane" name="jScrollPane1">
+						<Constraints>
+							<Constraint tabTitle="jScrollPane1"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+						<SubComponents>
+							<Component class="javax.swing.JScrollBar" name="jScrollPane1.horizontalScrollBar">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="javax.swing.JScrollBar" name="jScrollPane1.verticalScrollBar">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="javax.swing.JList" name="jListModels">
+								<Constraints>
+									<Constraint tabTitle="jListModels"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+									<Property name="selectionMode" type="int" value="0"/>
+								</Properties>
+							</Component>
+						</SubComponents>
+					</Component>
+					<Component class="javax.swing.JTextField" name="jtfModelName">
+						<Constraints>
+							<Constraint tabTitle="jtfModelName"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel3">
+						<Constraints>
+							<Constraint tabTitle="jLabel3"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Model Name:"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonCreateAtomic">
+						<Constraints>
+							<Constraint tabTitle="jButtonCreateAtomic"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonCreateAtomicActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Create"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel2">
+						<Constraints>
+							<Constraint tabTitle="jLabel2"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Develop FD-DEVS Atomic Model"/>
+							<Property name="font" type="Font">
+								<Font name="Tahoma" size="12" strikeout="false" style="1" underline="false"/>
+							</Property>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jbuttonStateTA">
+						<Constraints>
+							<Constraint tabTitle="jbuttonStateTA"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jbuttonStateTAActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Finite State - Time Advance Functions"/>
+							<Property name="enabled" type="boolean" value="true"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonDeltint">
+						<Constraints>
+							<Constraint tabTitle="jButtonDeltint"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonDeltintActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Default Internal State Machine Specifications"/>
+							<Property name="enabled" type="boolean" value="true"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonDeltext">
+						<Constraints>
+							<Constraint tabTitle="jButtonDeltext"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonDeltextActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="External Input State Machine Specifications"/>
+							<Property name="enabled" type="boolean" value="true"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JButton" name="jButtonGenerateAtomic">
+						<Constraints>
+							<Constraint tabTitle="jButtonGenerateAtomic"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Events>
+							<EventHandler event="actionPerformed" handler="jButtonGenerateAtomicActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+						</Events>
+						<Properties>
+							<Property name="text" type="String" value="Generate FD-DEVS"/>
+							<Property name="enabled" type="boolean" value="true"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JSeparator" name="jSeparator1">
+						<Constraints>
+							<Constraint tabTitle="jSeparator1"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel4">
+						<Constraints>
+							<Constraint tabTitle="jLabel4"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Package containing all FD-DEVS models"/>
+							<Property name="font" type="Font">
+								<Font name="Tahoma" size="12" strikeout="false" style="1" underline="false"/>
+							</Property>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JSeparator" name="jSeparator2">
+						<Constraints>
+							<Constraint tabTitle="jSeparator2"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel5">
+						<Constraints>
+							<Constraint tabTitle="jLabel5"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Develop Coupled Model from FD-DEVS Atomic Models"/>
+							<Property name="font" type="Font">
+								<Font name="Tahoma" size="12" strikeout="false" style="1" underline="false"/>
+							</Property>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel7">
+						<Constraints>
+							<Constraint tabTitle="jLabel7"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Component FD-DEVS models"/>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JLabel" name="jLabel8">
+						<Constraints>
+							<Constraint tabTitle="jLabel8"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="(c) 2007 Saurabh Mittal"/>
+							<Property name="horizontalAlignment" type="int" value="0"/>
+							<Property name="font" type="Font">
+								<Font name="Tahoma" size="9" strikeout="false" style="0" underline="false"/>
+							</Property>
+						</Properties>
+					</Component>
+				</SubComponents>
+			</Component>
+			<Component class="javax.swing.JPanel" name="jPanel3">
+				<Constraints>
+					<Constraint tabTitle="jPanel3"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Layout class="Group">
+					<Property name="autocreateContainerGaps" type="boolean" value="false"/>
+					<Property name="autocreateGaps" type="boolean" value="false"/>
+				</Layout>
+				<Properties>
+					<Property name="layout"/>
+				</Properties>
+				<SubComponents>
+					<Component class="javax.swing.JTabbedPane" name="jTabbedPane">
+						<Constraints>
+							<Constraint tabTitle="jTabbedPane"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+						<SubComponents>
+							<Component class="genDevs.jaxb.gui.PanelTextArea" name="xmlPanel::RA">
+								<Constraints>
+									<Constraint tabTitle="W3C XML FD-DEVS"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="genDevs.jaxb.gui.PanelTextArea" name="javaPanel::RA">
+								<Constraints>
+									<Constraint tabTitle="DEVSJAVA FD-DEVS"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="genDevs.jaxb.gui.PanelTextArea" name="xmlPanel">
+								<Constraints>
+									<Constraint tabTitle="XML Coupled-DEVS"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+							<Component class="genDevs.jaxb.gui.PanelTextArea" name="javaPanel">
+								<Constraints>
+									<Constraint tabTitle="DEVSJAVA Coupled-DEVS"/>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+						</SubComponents>
+					</Component>
+				</SubComponents>
+			</Component>
+			<Component class="javax.swing.JPanel" name="jPanel2">
+				<Constraints>
+					<Constraint tabTitle="jPanel2"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Layout class="Group">
+					<Property name="autocreateContainerGaps" type="boolean" value="false"/>
+					<Property name="autocreateGaps" type="boolean" value="false"/>
+				</Layout>
+				<Properties>
+					<Property name="layout"/>
+				</Properties>
+				<SubComponents>
+					<Component class="javax.swing.JLabel" name="jLabel1">
+						<Constraints>
+							<Constraint tabTitle="jLabel1"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="text" type="String" value="Template based DEVS Model Generation "/>
+							<Property name="horizontalAlignment" type="int" value="0"/>
+							<Property name="font" type="Font">
+								<Font name="Tahoma" size="18" strikeout="false" style="1" underline="false"/>
+							</Property>
+						</Properties>
+					</Component>
+				</SubComponents>
+			</Component>
+		</SubComponents>
+	</Component>
+</Form>

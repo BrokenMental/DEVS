@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="bidTest" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models>
+        <Model>
+            <devs>bidProc</devs>
+        </Model>
+        <Model>
+            <devs>bidCoord</devs>
+        </Model>
+    </Models>
+    <Couplings>
+        <Coupling>
+            <SrcModel>bidProc</SrcModel>
+            <outport>outJob</outport>
+            <DestModel>bidProc</DestModel>
+            <inport>inJob</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>bidCoord</SrcModel>
+            <outport>outJob</outport>
+            <DestModel>bidProc</DestModel>
+            <inport>inJob</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>bidProc</SrcModel>
+            <outport>outJob</outport>
+            <DestModel>bidCoord</DestModel>
+            <inport>inJob</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>bidCoord</SrcModel>
+            <outport>outJob</outport>
+            <DestModel>bidCoord</DestModel>
+            <inport>inJob</inport>
+        </Coupling>
+    </Couplings>
+</digraphType>

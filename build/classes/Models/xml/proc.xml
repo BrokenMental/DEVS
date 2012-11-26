@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="proc" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>passive</state>
+        <state>processing</state>
+        <state>dummy</state>
+        <state>active</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>processing</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+        <ta>
+            <state>dummy</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>active</state>
+            <Timeout>15.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>active</state>
+            <outport>outRevertToPassive</outport>
+        </lamda>
+        <lamda>
+            <state>processing</state>
+            <outport>outResult</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inJob</inport>
+        <inport>inStart</inport>
+    </inports>
+    <outports>
+        <outport>outRevertToPassive</outport>
+        <outport>outResult</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>active</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>processing</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Job</IncomingMessage>
+            <transition>
+                <StartState>active</StartState>
+                <NextState>processing</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Start</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>active</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

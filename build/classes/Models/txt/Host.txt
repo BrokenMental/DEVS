@@ -1,0 +1,5 @@
+ from sendBid go to passive!
+ to start passivate in passive!
+ after sendBid output Bid !
+ hold in sendBid for time 0.1 !
+ when in passive and receive bidSubmit then go to sendBid !

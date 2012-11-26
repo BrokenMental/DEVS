@@ -1,0 +1,2 @@
+!
+From the message perspective, a rythmDetect  is made of an drum and a ear ! From the message perspective, the drum sends  Beat to the ear !!

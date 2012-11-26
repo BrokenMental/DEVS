@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="pipArch" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models>
+        <Model>
+            <devs>procWport2</devs>
+        </Model>
+        <Model>
+            <devs>pipeCoord</devs>
+        </Model>
+        <Model>
+            <devs>procWport1</devs>
+        </Model>
+    </Models>
+    <Couplings>
+        <Coupling>
+            <SrcModel>procWport2</SrcModel>
+            <outport>outJob2</outport>
+            <DestModel>pipeCoord</DestModel>
+            <inport>inJob2</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>procWport1</SrcModel>
+            <outport>outJob1</outport>
+            <DestModel>pipeCoord</DestModel>
+            <inport>inJob1</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>pipeCoord</SrcModel>
+            <outport>outJ2</outport>
+            <DestModel>procWport2</DestModel>
+            <inport>inJ2</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>pipeCoord</SrcModel>
+            <outport>outJ1</outport>
+            <DestModel>procWport1</DestModel>
+            <inport>inJ1</inport>
+        </Coupling>
+    </Couplings>
+</digraphType>

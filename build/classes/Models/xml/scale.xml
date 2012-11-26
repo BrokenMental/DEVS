@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<atomicType host="localHost" modelName="scale" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+<states>
+	<state>noteA</state>
+	<state>noteB</state>
+	<state>noteC</state>
+	<state>noteD</state>
+	<state>noteE</state>
+	<state>noteF</state>
+	<state>noteG</state>
+</states>
+<TimeAdvance>
+	<ta>
+	  <state>noteA</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>noteB</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>noteC</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>noteD</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>noteE</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>noteF</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>noteG</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+</TimeAdvance>
+<LamdaSet>
+</LamdaSet>
+<inports>
+</inports>
+<outports>
+</outports>
+<deltint>
+	<InternalTransition intTransitionID="1">
+	  <transition>
+	  	<StartState>noteA</StartState>
+	  	<NextState>noteA</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="2">
+	  <transition>
+	  	<StartState>noteA</StartState>
+	  	<NextState>noteB</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="3">
+	  <transition>
+	  	<StartState>noteB</StartState>
+	  	<NextState>noteC</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="4">
+	  <transition>
+	  	<StartState>noteC</StartState>
+	  	<NextState>noteD</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="5">
+	  <transition>
+	  	<StartState>noteD</StartState>
+	  	<NextState>noteE</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="6">
+	  <transition>
+	  	<StartState>noteE</StartState>
+	  	<NextState>noteF</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="7">
+	  <transition>
+	  	<StartState>noteF</StartState>
+	  	<NextState>noteG</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="8">
+	  <transition>
+	  	<StartState>noteG</StartState>
+	  	<NextState>noteA</NextState>
+	  </transition>
+	</InternalTransition>
+</deltint>
+    <deltext>
+    </deltext>
+</atomicType>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="try" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>waitForTry</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>waitForTry</state>
+            <Timeout>INF</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet/>
+    <inports>
+        <inport>inMsg</inport>
+    </inports>
+    <outports/>
+    <deltint>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>waitForTry</StartState>
+                <NextState>waitForTry</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Msg</IncomingMessage>
+            <transition>
+                <StartState>waitForTry</StartState>
+                <NextState>waitForTry</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

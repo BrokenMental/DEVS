@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Form builder="jigloo" ide="eclipse" laf="com.jgoodies.looks.plastic.Plastic3DLookAndFeel" style="Swing" version="4.0.0">
+<NonVisualComponents>
+		<Component class="UNKNOWN" name="Non-visual components" style="0">
+			<Constraints>
+				<LayoutConstraint/>
+			</Constraints>
+			<SubComponents>
+				<Component class="java.io.File" name="file_IL" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.FileWriter" name="%0.%0.%2.writer" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl" name="%0.%0.%2.jc" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="javax.xml.bind.Marshaller" name="%0.%0.%2.nm" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.io.StringWriter" name="%0.%0.%2.sw" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+			</SubComponents>
+		</Component></NonVisualComponents>
+	<Component class="javax.swing.JDialog" name="this">
+		<Constraints>
+			<Constraint tabTitle="this"/>
+			<LayoutConstraint/>
+		</Constraints>
+		<Layout class="Absolute">
+		</Layout>
+		<Properties>
+			<Property name="layout"/>
+			<Property name="title" type="String" value="Coupled Model Name"/>
+			<Property name="size" type="Dimension">
+				<Dimension value="[368, 124]"/>
+			</Property>
+		</Properties>
+		<SubComponents>
+			<Component class="javax.swing.JLabel" name="jLableCoupledName">
+				<Constraints>
+					<Constraint tabTitle="jLableCoupledName"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Enter Coupled Model Name"/>
+					<Property name="bounds" type="Rectangle">
+						<Rectangle value="[6, 18, 148, 14]"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JTextField" name="jtfCoupledModelName">
+				<Constraints>
+					<Constraint tabTitle="super.getJMenuBar()"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="bounds" type="Rectangle">
+						<Rectangle value="[154, 15, 194, 21]"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JButton" name="jBtnDone">
+				<Constraints>
+					<Constraint tabTitle="jLableCoupledName"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jBtnDoneActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+				</Events>
+				<Properties>
+					<Property name="text" type="String" value="Done"/>
+					<Property name="bounds" type="Rectangle">
+						<Rectangle value="[294, 57, 55, 21]"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JButton" name="jBtnCancel">
+				<Constraints>
+					<Constraint tabTitle="super.getJMenuBar()"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jBtnCancelActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+				</Events>
+				<Properties>
+					<Property name="text" type="String" value="Cancel"/>
+					<Property name="bounds" type="Rectangle">
+						<Rectangle value="[234, 57, 55, 21]"/>
+					</Property>
+				</Properties>
+			</Component>
+		</SubComponents>
+	</Component>
+</Form>

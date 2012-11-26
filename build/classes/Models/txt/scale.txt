@@ -1,0 +1,15 @@
+to start hold in noteC for time 1 !
+
+from noteC go to noteD !
+from noteD go to noteE !
+from noteE go to noteF !
+from noteF go to noteG !
+from noteG go to noteA !
+from noteA go to noteB !
+from noteB go to noteC !
+
+hold in noteB for time  1!
+hold in noteD for time  1!
+hold in noteE for time  1!
+hold in noteF for time  1!
+hold in noteG for time  1!

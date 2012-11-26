@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="SUT" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>waitForTrack</state>
+        <state>sendRR</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>waitForTrack</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>sendRR</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>sendRR</state>
+            <outport>outRRCommand</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inRadarTrack</inport>
+    </inports>
+    <outports>
+        <outport>outRRCommand</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>sendRR</StartState>
+                <NextState>waitForTrack</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>waitForTrack</StartState>
+                <NextState>waitForTrack</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>RadarTrack</IncomingMessage>
+            <transition>
+                <StartState>waitForTrack</StartState>
+                <NextState>sendRR</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

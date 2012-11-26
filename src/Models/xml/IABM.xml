@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="IABM" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>waitForBid</state>
+        <state>waitForJob</state>
+        <state>sendJob</state>
+        <state>passive</state>
+        <state>sendJobResults</state>
+        <state>sendSubmitBid</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>waitForBid</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>waitForJob</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>sendJob</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>sendJobResults</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>sendSubmitBid</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>sendJobResults</state>
+            <outport>outJobResults</outport>
+        </lamda>
+        <lamda>
+            <state>sendJob</state>
+            <outport>outJob</outport>
+        </lamda>
+        <lamda>
+            <state>sendSubmitBid</state>
+            <outport>outSubmitBid</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inJobResults</inport>
+        <inport>inBid</inport>
+        <inport>inSensorDataRequest</inport>
+    </inports>
+    <outports>
+        <outport>outJobResults</outport>
+        <outport>outJob</outport>
+        <outport>outSubmitBid</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="4">
+            <transition>
+                <StartState>sendJobResults</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>sendJob</StartState>
+                <NextState>waitForJob</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>sendSubmitBid</StartState>
+                <NextState>waitForBid</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="3">
+            <IncomingMessage>JobResults</IncomingMessage>
+            <transition>
+                <StartState>waitForJob</StartState>
+                <NextState>sendJobResults</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Bid</IncomingMessage>
+            <transition>
+                <StartState>waitForBid</StartState>
+                <NextState>sendJob</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>SensorDataRequest</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>sendSubmitBid</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

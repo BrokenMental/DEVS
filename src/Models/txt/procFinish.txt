@@ -1,0 +1,12 @@
+procFinisher: to start passivate in waitForJob !
+procFinisher: when in waitForJob and receive Job go to busy !
+procFinisher: hold in busy for time 10 !
+procFinisher: from busy go to waitForJob !
+procFinisher: After busy then output Job !
+procFinisher: when in busy and receive Stop go to finishing eventually!
+procFinisher: when in waitForJob and receive Stop go to passive!
+procFinisher: hold in finishing for time 100 !
+procFinisher: from finishing go to passive!
+procFinisher: passivate in passive!
+procFinisher: After finishing then output Job !
+procFinisher: After finishing then output Thatsit !

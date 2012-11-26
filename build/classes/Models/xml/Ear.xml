@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="Ear" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>NotSyncOut</state>
+        <state>SyncOut</state>
+        <state>Active</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>NotSyncOut</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>SyncOut</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>Active</state>
+            <Timeout>11.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>NotSyncOut</state>
+            <outport>outNotSync</outport>
+        </lamda>
+        <lamda>
+            <state>SyncOut</state>
+            <outport>outSync</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inBeat</inport>
+    </inports>
+    <outports>
+        <outport>outNotSync</outport>
+        <outport>outSync</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>SyncOut</StartState>
+                <NextState>Active</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>NotSyncOut</StartState>
+                <NextState>Active</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>Active</StartState>
+                <NextState>Active</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Beat</IncomingMessage>
+            <transition>
+                <StartState>Active</StartState>
+                <NextState>NotSyncOut</NextState>
+            </transition>
+            <scheduleIndicator>false</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Beat</IncomingMessage>
+            <transition>
+                <StartState>Active</StartState>
+                <NextState>SyncOut</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

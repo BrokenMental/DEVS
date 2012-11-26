@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="simSim" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>sendTN</state>
+        <state>waitForGetOut</state>
+        <state>waitForNextTN</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>sendTN</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+        <ta>
+            <state>waitForGetOut</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>waitForNextTN</state>
+            <Timeout>INF</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet/>
+    <inports/>
+    <outports/>
+    <deltint/>
+    <deltext/>
+</atomicType>

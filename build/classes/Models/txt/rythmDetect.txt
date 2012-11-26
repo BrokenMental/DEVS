@@ -1,0 +1,11 @@
+!
+drum: to start hold in active for time 10 ! 
+drum: after active then output Beat! 
+!
+ear: to start hold in listen for time 10 ! 
+ear: when in listen and receive Beat then go to SendOffBeat eventually! 
+ear: from listen go to listen ! 
+ear: after SendOffBeat then output OffBeat! 
+ear: from SendOffBeat go to listen ! 
+ear: hold in SendOffBeat for time 100 ! 
+!

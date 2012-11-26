@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="SensorSim" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>waitForDataSpec</state>
+        <state>sendSensorTrack</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>waitForDataSpec</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>sendSensorTrack</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>sendSensorTrack</state>
+            <outport>outRadarTrack</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inDataSpec</inport>
+    </inports>
+    <outports>
+        <outport>outRadarTrack</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>sendSensorTrack</StartState>
+                <NextState>waitForDataSpec</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>DataSpec</IncomingMessage>
+            <transition>
+                <StartState>waitForDataSpec</StartState>
+                <NextState>sendSensorTrack</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

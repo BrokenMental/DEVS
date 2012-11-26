@@ -1,0 +1,2 @@
+ after active then output Beat!
+ to start hold in active for time 10 !

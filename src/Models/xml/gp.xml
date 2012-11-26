@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="gp" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models/>
+    <Couplings/>
+</digraphType>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="bidCoord" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>send_Job</state>
+        <state>waitForBid</state>
+        <state>send_free</state>
+        <state>passive</state>
+        <state>send_y</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>send_Job</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>waitForBid</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>send_free</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>send_y</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>send_Job</state>
+            <outport>outJobDone</outport>
+        </lamda>
+        <lamda>
+            <state>send_y</state>
+            <outport>outJob</outport>
+        </lamda>
+        <lamda>
+            <state>send_free</state>
+            <outport>outfree?</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inJobDone</inport>
+        <inport>inBid</inport>
+        <inport>inJob</inport>
+    </inports>
+    <outports>
+        <outport>outJobDone</outport>
+        <outport>outJob</outport>
+        <outport>outfree?</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="4">
+            <transition>
+                <StartState>send_Job</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>send_y</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>send_free</StartState>
+                <NextState>waitForBid</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="4">
+            <IncomingMessage>JobDone</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>send_Job</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="3">
+            <IncomingMessage>JobDone</IncomingMessage>
+            <transition>
+                <StartState>waitForBid</StartState>
+                <NextState>send_Job</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Bid</IncomingMessage>
+            <transition>
+                <StartState>waitForBid</StartState>
+                <NextState>send_y</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Job</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>send_free</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

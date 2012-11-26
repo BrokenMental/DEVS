@@ -1,0 +1,3 @@
+!
+Coordinator: to start passivate in passive ! Coordinator: when in passive and receive SensorData  go to sendBidSubmit ! Coordinator: after sendBidSubmit then output bidSubmit! Coordinator: hold in sendBidSubmit for time 1.0 ! Coordinator: from sendBidSubmit go to waitForBid ! Coordinator: passivate in waitForBid !!
+Host: when in passive and receive bidSubmit then go to sendBid ! Host: after sendBid output Bid ! Host: from sendBid go to passive! Host: hold in sendBid for time 0.1 ! Host: to start passivate in passive!!

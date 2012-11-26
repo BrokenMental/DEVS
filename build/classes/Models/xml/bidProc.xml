@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="bidProc" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>bid</state>
+        <state>passive</state>
+        <state>busy</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>bid</state>
+            <Timeout>0.1</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>busy</state>
+            <Timeout>5.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>busy</state>
+            <outport>outJobDone</outport>
+        </lamda>
+        <lamda>
+            <state>bid</state>
+            <outport>outBid</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inJob</inport>
+        <inport>infree?</inport>
+    </inports>
+    <outports>
+        <outport>outJobDone</outport>
+        <outport>outBid</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>busy</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>bid</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Job</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>busy</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>free?</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>bid</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

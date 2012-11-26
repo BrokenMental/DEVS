@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="InteropTestBed" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models>
+        <Model>
+            <devs>SUT</devs>
+        </Model>
+        <Model>
+            <devs>ATCGenObserver</devs>
+        </Model>
+        <Model>
+            <devs>SensorSim</devs>
+        </Model>
+    </Models>
+    <Couplings>
+        <Coupling>
+            <SrcModel>SUT</SrcModel>
+            <outport>outRRCommand</outport>
+            <DestModel>ATCGenObserver</DestModel>
+            <inport>inRRCommand</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>SensorSim</SrcModel>
+            <outport>outRadarTrack</outport>
+            <DestModel>SUT</DestModel>
+            <inport>inRadarTrack</inport>
+        </Coupling>
+    </Couplings>
+</digraphType>

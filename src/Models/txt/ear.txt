@@ -1,0 +1,6 @@
+ hold in SendOffBeat for time 100 !
+ from SendOffBeat go to listen !
+ when in listen and receive Beat then go to SendOffBeat eventually!
+ after SendOffBeat then output OffBeat!
+ to start hold in listen for time 10 !
+ from listen go to listen !

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="binOp" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>leftReceived</state>
+        <state>none</state>
+        <state>bothReceived</state>
+        <state>rightReceived</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>leftReceived</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>none</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>bothReceived</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>rightReceived</state>
+            <Timeout>INF</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>bothReceived</state>
+            <outport>outResult</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inRight</inport>
+        <inport>inLeft</inport>
+    </inports>
+    <outports>
+        <outport>outResult</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>bothReceived</StartState>
+                <NextState>none</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>none</StartState>
+                <NextState>none</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="4">
+            <IncomingMessage>Right</IncomingMessage>
+            <transition>
+                <StartState>leftReceived</StartState>
+                <NextState>bothReceived</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="3">
+            <IncomingMessage>Left</IncomingMessage>
+            <transition>
+                <StartState>rightReceived</StartState>
+                <NextState>bothReceived</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Right</IncomingMessage>
+            <transition>
+                <StartState>none</StartState>
+                <NextState>rightReceived</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Left</IncomingMessage>
+            <transition>
+                <StartState>none</StartState>
+                <NextState>leftReceived</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

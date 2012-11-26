@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<atomicType host="localHost" modelName="Coordinator" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+<states>
+	<state>waitForBid</state>
+	<state>sendBidSubmit</state>
+	<state>passive</state>
+</states>
+<TimeAdvance>
+	<ta>
+	  <state>waitForBid</state>
+	  <Timeout>INFINITY</Timeout>
+	</ta>
+	<ta>
+	  <state>sendBidSubmit</state>
+	  <Timeout>1.0</Timeout>
+	</ta>
+	<ta>
+	  <state>passive</state>
+	  <Timeout>INFINITY</Timeout>
+	</ta>
+</TimeAdvance>
+<LamdaSet>
+	<lamda>
+	  <state>sendBidSubmit</state>
+	  <outport>outbidSubmit</outport>
+	</lamda>
+</LamdaSet>
+<inports>
+	<inport>inSensorData</inport>
+</inports>
+<outports>
+	<outport>outbidSubmit</outport>
+</outports>
+<deltint>
+	<InternalTransition intTransitionID="1">
+	  <transition>
+	  	<StartState>sendBidSubmit</StartState>
+	  	<NextState>waitForBid</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="2">
+	  <transition>
+	  	<StartState>passive</StartState>
+	  	<NextState>passive</NextState>
+	  </transition>
+	</InternalTransition>
+</deltint>
+<deltext>
+	<ExternalTransition extTransitionID="1">
+	  <IncomingMessage>inSensorData</IncomingMessage>
+	  <transition>
+	  	<StartState>passive</StartState>
+	  	<NextState>sendBidSubmit</NextState>
+	  </transition>
+	  <scheduleIndicator>true</scheduleIndicator>
+	</ExternalTransition>
+</deltext>
+</atomicType>

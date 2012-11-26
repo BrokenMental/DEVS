@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<atomicType host="localHost" modelName="procFinisher" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+<states>
+	<state>finishing</state>
+	<state>waitForJob</state>
+	<state>busy</state>
+</states>
+<TimeAdvance>
+	<ta>
+	  <state>finishing</state>
+	  <Timeout>100.0</Timeout>
+	</ta>
+	<ta>
+	  <state>waitForJob</state>
+	  <Timeout>INFINITY</Timeout>
+	</ta>
+	<ta>
+	  <state>busy</state>
+	  <Timeout>10.0</Timeout>
+	</ta>
+</TimeAdvance>
+<LamdaSet>
+	<lamda>
+	  <state>busy</state>
+	  <outport>outJob</outport>
+	</lamda>
+	<lamda>
+	  <state>finishing</state>
+	  <outport>outJob</outport>
+	</lamda>
+	<lamda>
+	  <state>finishing</state>
+	  <outport>outThatsit</outport>
+	</lamda>
+</LamdaSet>
+<inports>
+	<inport>inStop</inport>
+	<inport>inStop</inport>
+	<inport>inJob</inport>
+</inports>
+<outports>
+	<outport>outJob</outport>
+	<outport>outJob</outport>
+	<outport>outThatsit</outport>
+</outports>
+<deltint>
+	<InternalTransition intTransitionID="1">
+	  <transition>
+	  	<StartState>busy</StartState>
+	  	<NextState>waitForJob</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="2">
+	  <transition>
+	  	<StartState>finishing</StartState>
+	  	<NextState>passive</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="3">
+	  <transition>
+	  	<StartState>waitForJob</StartState>
+	  	<NextState>waitForJob</NextState>
+	  </transition>
+	</InternalTransition>
+</deltint>
+<deltext>
+	<ExternalTransition extTransitionID="1">
+	  <IncomingMessage>inStop</IncomingMessage>
+	  <transition>
+	  	<StartState>busy</StartState>
+	  	<NextState>finishing</NextState>
+	  </transition>
+	  <scheduleIndicator>false</scheduleIndicator>
+	</ExternalTransition>
+	<ExternalTransition extTransitionID="2">
+	  <IncomingMessage>inStop</IncomingMessage>
+	  <transition>
+	  	<StartState>waitForJob</StartState>
+	  	<NextState>passive</NextState>
+	  </transition>
+	  <scheduleIndicator>true</scheduleIndicator>
+	</ExternalTransition>
+	<ExternalTransition extTransitionID="3">
+	  <IncomingMessage>inJob</IncomingMessage>
+	  <transition>
+	  	<StartState>waitForJob</StartState>
+	  	<NextState>busy</NextState>
+	  </transition>
+	  <scheduleIndicator>true</scheduleIndicator>
+	</ExternalTransition>
+</deltext>
+</atomicType>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Form builder="jigloo" ide="eclipse" laf="com.jgoodies.looks.plastic.Plastic3DLookAndFeel" style="Swing" version="4.0.0">
+<NonVisualComponents>
+		<Component class="UNKNOWN" name="Non-visual components" style="0">
+			<Constraints>
+				<LayoutConstraint/>
+			</Constraints>
+			<SubComponents>
+				<Component class="java.lang.Integer" name="%0.%4.id" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="java.lang.Object" name="%0.%0.%4.dataSet" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.modeling.gui.StructureDeltext" name="%0.%4.deltext" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+				<Component class="genDevs.modeling.gui.TableModel_Deltext" name="tableModel" style="0">
+					<Constraints>
+						<LayoutConstraint/>
+					</Constraints>
+					<Properties>
+					</Properties>
+				</Component>
+			</SubComponents>
+		</Component></NonVisualComponents>
+	<Component class="javax.swing.JDialog" name="this">
+		<Constraints>
+			<Constraint tabTitle="this"/>
+			<LayoutConstraint/>
+		</Constraints>
+		<Layout class="Group">
+			<Property name="autocreateContainerGaps" type="boolean" value="false"/>
+			<Property name="autocreateGaps" type="boolean" value="false"/>
+		</Layout>
+		<Properties>
+			<Property name="layout"/>
+			<Property name="defaultCloseOperation" type="int" value="2"/>
+		</Properties>
+		<SubComponents>
+			<Component class="javax.swing.JButton" name="jButtonCancel">
+				<Constraints>
+					<Constraint tabTitle="jButtonCancel"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jButtonCancelActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+				</Events>
+				<Properties>
+					<Property name="text" type="String" value="Cancel"/>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JButton" name="jButtonDone">
+				<Constraints>
+					<Constraint tabTitle="jButtonDone"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jButtonDoneActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+				</Events>
+				<Properties>
+					<Property name="text" type="String" value="Done"/>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel6">
+				<Constraints>
+					<Constraint tabTitle="jLabel6"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Outgoing Msg"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JTextField" name="jtfOutgoingMsg">
+				<Constraints>
+					<Constraint tabTitle="jtfOutgoingMsg"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+					<Property name="text" type="String" value=""/>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel7">
+				<Constraints>
+					<Constraint tabTitle="jLabel7"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Timeout"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JTextField" name="jtfTimeout">
+				<Constraints>
+					<Constraint tabTitle="jtfTimeout"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+					<Property name="text" type="String" value=""/>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JCheckBox" name="jcbReschedule">
+				<Constraints>
+					<Constraint tabTitle="jcbReschedule"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jcbRescheduleActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+					<EventHandler event="itemStateChanged" handler="jcbRescheduleItemStateChangedhandler method" listener="java.awt.event.ItemListener"/>
+				</Events>
+				<Properties>
+					<Property name="selected" type="boolean" value="true"/>
+					<Property name="margin" type="Insets">
+						<Insets value="[0, 0, 0, 0]"/>
+					</Property>
+					<Property class="javax.swing.border.EmptyBorder" name="border">
+						<Property name="borderInsets" type="Insets">
+						<Insets value="[0, 0, 0, 0]"/>
+					</Property>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel5">
+				<Constraints>
+					<Constraint tabTitle="jLabel5"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Reschedule"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel4">
+				<Constraints>
+					<Constraint tabTitle="jLabel4"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Next State"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JComboBox" name="jcbNextState">
+				<Constraints>
+					<Constraint tabTitle="jcbNextState"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="itemStateChanged" handler="jcbNextStateItemStateChangedhandler method" listener="java.awt.event.ItemListener"/>
+				</Events>
+				<Properties>
+					<Property name="model"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel3">
+				<Constraints>
+					<Constraint tabTitle="jLabel3"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Start State"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JComboBox" name="jcbStartState">
+				<Constraints>
+					<Constraint tabTitle="jcbStartState"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="model"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel2">
+				<Constraints>
+					<Constraint tabTitle="jLabel2"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="Incoming Msg"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JTextField" name="jtfIncomingMsg">
+				<Constraints>
+					<Constraint tabTitle="jtfIncomingMsg"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+					<Property name="text" type="String" value=""/>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JTextField" name="jtfSNo">
+				<Constraints>
+					<Constraint tabTitle="jtfSNo"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+					<Property name="text" type="String" value="1"/>
+					<Property name="editable" type="boolean" value="false"/>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JLabel" name="jLabel1">
+				<Constraints>
+					<Constraint tabTitle="jLabel1"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+					<Property name="text" type="String" value="S.No."/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JButton" name="jButtonAdd">
+				<Constraints>
+					<Constraint tabTitle="jButtonAdd"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jButtonAddActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+				</Events>
+				<Properties>
+					<Property name="text" type="String" value="Add"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JButton" name="jButtonDelete">
+				<Constraints>
+					<Constraint tabTitle="jButtonDelete"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Events>
+					<EventHandler event="actionPerformed" handler="jButtonDeleteActionPerformedhandler method" listener="java.awt.event.ActionListener"/>
+				</Events>
+				<Properties>
+					<Property name="text" type="String" value="Delete"/>
+					<Property name="font" type="Font">
+						<Font name="Tahoma" size="10" strikeout="false" style="0" underline="false"/>
+					</Property>
+				</Properties>
+			</Component>
+			<Component class="javax.swing.JScrollPane" name="jScrollPane1">
+				<Constraints>
+					<Constraint tabTitle="jScrollPane1"/>
+					<LayoutConstraint/>
+				</Constraints>
+				<Properties>
+				</Properties>
+				<SubComponents>
+					<Component class="javax.swing.JScrollBar" name="jScrollPane1.horizontalScrollBar">
+						<Constraints>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JScrollBar" name="jScrollPane1.verticalScrollBar">
+						<Constraints>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+						</Properties>
+					</Component>
+					<Component class="javax.swing.JTable" name="jTableDeltext::RA">
+						<Constraints>
+							<Constraint tabTitle="jTableDeltext"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="model"/>
+						</Properties>
+						<SubComponents>
+							<Component class="javax.swing.table.JTableHeader" name="jTableDeltext::RA.tableHeader">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+						</SubComponents>
+					</Component>
+					<Component class="javax.swing.JTable" name="jTableDeltext">
+						<Constraints>
+							<Constraint tabTitle="jTableDeltext"/>
+							<LayoutConstraint/>
+						</Constraints>
+						<Properties>
+							<Property name="model"/>
+						</Properties>
+						<SubComponents>
+							<Component class="javax.swing.table.JTableHeader" name="jTableDeltext.tableHeader">
+								<Constraints>
+									<LayoutConstraint/>
+								</Constraints>
+								<Properties>
+								</Properties>
+							</Component>
+						</SubComponents>
+					</Component>
+				</SubComponents>
+			</Component>
+		</SubComponents>
+	</Component>
+</Form>

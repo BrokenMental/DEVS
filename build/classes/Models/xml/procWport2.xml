@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="procWport2" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>passive</state>
+        <state>busy</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>busy</state>
+            <Timeout>8.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>busy</state>
+            <outport>outJob2</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inJ2</inport>
+    </inports>
+    <outports>
+        <outport>outJob2</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>busy</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>J2</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>busy</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

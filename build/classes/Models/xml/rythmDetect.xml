@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="rythmDetect" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models>
+        <Model>
+            <devs>drum</devs>
+        </Model>
+        <Model>
+            <devs>ear</devs>
+        </Model>
+    </Models>
+    <Couplings>
+        <Coupling>
+            <SrcModel>drum</SrcModel>
+            <outport>outBeat</outport>
+            <DestModel>ear</DestModel>
+            <inport>inBeat</inport>
+        </Coupling>
+    </Couplings>
+</digraphType>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<digraphType host="localhost" name="Negotiation" xmlns="http://www.saurabh-mittal.com/CoupledDevs">
+    <Models>
+        <Model>
+            <devs>IABM</devs>
+        </Model>
+        <Model>
+            <devs>host</devs>
+        </Model>
+    </Models>
+    <Couplings>
+        <Coupling>
+            <SrcModel>host</SrcModel>
+            <outport>outBid</outport>
+            <DestModel>IABM</DestModel>
+            <inport>inBid</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>IABM</SrcModel>
+            <outport>outJobResults</outport>
+            <DestModel>IABM</DestModel>
+            <inport>inJobResults</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>host</SrcModel>
+            <outport>outJobResults</outport>
+            <DestModel>IABM</DestModel>
+            <inport>inJobResults</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>IABM</SrcModel>
+            <outport>outSubmitBid</outport>
+            <DestModel>host</DestModel>
+            <inport>inSubmitBid</inport>
+        </Coupling>
+        <Coupling>
+            <SrcModel>IABM</SrcModel>
+            <outport>outJob</outport>
+            <DestModel>host</DestModel>
+            <inport>inJob</inport>
+        </Coupling>
+    </Couplings>
+</digraphType>

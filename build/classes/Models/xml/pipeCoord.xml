@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="pipeCoord" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>sendOut</state>
+        <state>sendJ3</state>
+        <state>sendJ2</state>
+        <state>sendJ1</state>
+        <state>passive</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>sendOut</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>sendJ3</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>sendJ2</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>sendJ1</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>sendOut</state>
+            <outport>outJobDone</outport>
+        </lamda>
+        <lamda>
+            <state>sendJ3</state>
+            <outport>outJ3</outport>
+        </lamda>
+        <lamda>
+            <state>sendJ2</state>
+            <outport>outJ2</outport>
+        </lamda>
+        <lamda>
+            <state>sendJ1</state>
+            <outport>outJ1</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inJob2</inport>
+        <inport>inJob1</inport>
+        <inport>inJob</inport>
+    </inports>
+    <outports>
+        <outport>outJobDone</outport>
+        <outport>outJ3</outport>
+        <outport>outJ2</outport>
+        <outport>outJ1</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="5">
+            <transition>
+                <StartState>sendOut</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="4">
+            <transition>
+                <StartState>sendJ3</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>sendJ2</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>sendJ1</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="3">
+            <IncomingMessage>Job2</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>sendJ3</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Job1</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>sendJ2</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Job</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>sendJ1</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

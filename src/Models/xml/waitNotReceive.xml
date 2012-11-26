@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="waitNotReceive" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>MsgRecvd</state>
+        <state>passive</state>
+        <state>waitForMsg</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>MsgRecvd</state>
+            <Timeout>0.0</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>waitForMsg</state>
+            <Timeout>20.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>MsgRecvd</state>
+            <outport>outFail:MsgRecvd</outport>
+        </lamda>
+        <lamda>
+            <state>waitForMsg</state>
+            <outport>outPass:MsgNotRecvd</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inMsg</inport>
+        <inport>inStart</inport>
+    </inports>
+    <outports>
+        <outport>outFail:MsgRecvd</outport>
+        <outport>outPass:MsgNotRecvd</outport>
+    </outports>
+    <deltint/>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>Msg</IncomingMessage>
+            <transition>
+                <StartState>waitForMsg</StartState>
+                <NextState>MsgRecvd</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>Start</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>waitForMsg</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

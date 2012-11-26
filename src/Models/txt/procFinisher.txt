@@ -1,0 +1,11 @@
+ from busy go to waitForJob !
+ After busy then output Job !
+ hold in finishing for time 100 !
+ After finishing then output Job !
+ from finishing go to passive!
+ to start passivate in waitForJob !
+ hold in busy for time 10 !
+ After finishing then output Thatsit !
+ when in busy and receive Stop go to finishing eventually!
+ when in waitForJob and receive Stop go to passive!
+ when in waitForJob and receive Job go to busy !

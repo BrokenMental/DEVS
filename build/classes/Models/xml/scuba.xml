@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="scuba" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>at20</state>
+        <state>surface</state>
+        <state>at40</state>
+        <state>at60</state>
+        <state>at5</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>at20</state>
+            <Timeout>20.0</Timeout>
+        </ta>
+        <ta>
+            <state>surface</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>at40</state>
+            <Timeout>40.0</Timeout>
+        </ta>
+        <ta>
+            <state>at60</state>
+            <Timeout>60.0</Timeout>
+        </ta>
+        <ta>
+            <state>at5</state>
+            <Timeout>5.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>at5</state>
+            <outport>outBackUp</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inComeUp</inport>
+        <inport>inGoDive</inport>
+    </inports>
+    <outports>
+        <outport>outBackUp</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="5">
+            <transition>
+                <StartState>at5</StartState>
+                <NextState>surface</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="4">
+            <transition>
+                <StartState>at20</StartState>
+                <NextState>at5</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>at40</StartState>
+                <NextState>at20</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>at60</StartState>
+                <NextState>at40</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>surface</StartState>
+                <NextState>surface</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="4">
+            <IncomingMessage>ComeUp</IncomingMessage>
+            <transition>
+                <StartState>at40</StartState>
+                <NextState>at5</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="3">
+            <IncomingMessage>ComeUp</IncomingMessage>
+            <transition>
+                <StartState>at20</StartState>
+                <NextState>at5</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>GoDive</IncomingMessage>
+            <transition>
+                <StartState>surface</StartState>
+                <NextState>at60</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>ComeUp</IncomingMessage>
+            <transition>
+                <StartState>at60</StartState>
+                <NextState>at5</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

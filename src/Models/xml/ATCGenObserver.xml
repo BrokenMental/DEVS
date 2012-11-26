@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="ATCGenObserver" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>sendPass</state>
+        <state>passive</state>
+        <state>sendFail</state>
+        <state>waitForRR</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>sendPass</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+        <ta>
+            <state>passive</state>
+            <Timeout>INF</Timeout>
+        </ta>
+        <ta>
+            <state>sendFail</state>
+            <Timeout>1.0</Timeout>
+        </ta>
+        <ta>
+            <state>waitForRR</state>
+            <Timeout>10.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>sendPass</state>
+            <outport>outPass</outport>
+        </lamda>
+    </LamdaSet>
+    <inports>
+        <inport>inRRCommand</inport>
+        <inport>inDoRRObs</inport>
+    </inports>
+    <outports>
+        <outport>outPass</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="4">
+            <transition>
+                <StartState>waitForRR</StartState>
+                <NextState>sendFail</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="3">
+            <transition>
+                <StartState>sendPass</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="2">
+            <transition>
+                <StartState>sendFail</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>passive</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext>
+        <ExternalTransition extTransitionID="2">
+            <IncomingMessage>RRCommand</IncomingMessage>
+            <transition>
+                <StartState>waitForRR</StartState>
+                <NextState>sendPass</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+        <ExternalTransition extTransitionID="1">
+            <IncomingMessage>DoRRObs</IncomingMessage>
+            <transition>
+                <StartState>passive</StartState>
+                <NextState>waitForRR</NextState>
+            </transition>
+            <scheduleIndicator>true</scheduleIndicator>
+        </ExternalTransition>
+    </deltext>
+</atomicType>

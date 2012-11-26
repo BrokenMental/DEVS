@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<atomicType host="localhost" modelName="genr" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+    <states>
+        <state>passive</state>
+        <state>active</state>
+    </states>
+    <TimeAdvance>
+        <ta>
+            <state>passive</state>
+            <Timeout>100.0</Timeout>
+        </ta>
+        <ta>
+            <state>active</state>
+            <Timeout>10.0</Timeout>
+        </ta>
+    </TimeAdvance>
+    <LamdaSet>
+        <lamda>
+            <state>active</state>
+            <outport>outout</outport>
+        </lamda>
+    </LamdaSet>
+    <inports/>
+    <outports>
+        <outport>outout</outport>
+    </outports>
+    <deltint>
+        <InternalTransition intTransitionID="1">
+            <transition>
+                <StartState>active</StartState>
+                <NextState>active</NextState>
+            </transition>
+        </InternalTransition>
+    </deltint>
+    <deltext/>
+</atomicType>

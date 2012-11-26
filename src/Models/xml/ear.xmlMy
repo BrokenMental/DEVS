@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<atomicType host="localHost" modelName="ear" xmlns="http://www.saurabh-mittal.com/NewXMLSchema">
+<states>
+	<state>SendOffBeat</state>
+	<state>listen</state>
+</states>
+<TimeAdvance>
+	<ta>
+	  <state>SendOffBeat</state>
+	  <Timeout>100.0</Timeout>
+	</ta>
+	<ta>
+	  <state>listen</state>
+	  <Timeout>10.0</Timeout>
+	</ta>
+</TimeAdvance>
+<LamdaSet>
+	<lamda>
+	  <state>SendOffBeat</state>
+	  <outport>outOffBeat</outport>
+	</lamda>
+</LamdaSet>
+<inports>
+	<inport>Beat</inport>
+</inports>
+<outports>
+	<outport>outOffBeat</outport>
+</outports>
+<deltint>
+	<InternalTransition intTransitionID="1">
+	  <transition>
+	  	<StartState>SendOffBeat</StartState>
+	  	<NextState>listen</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="2">
+	  <transition>
+	  	<StartState>listen</StartState>
+	  	<NextState>listen</NextState>
+	  </transition>
+	</InternalTransition>
+	<InternalTransition intTransitionID="3">
+	  <transition>
+	  	<StartState>listen</StartState>
+	  	<NextState>listen</NextState>
+	  </transition>
+	</InternalTransition>
+</deltint>
+<deltext>
+	<ExternalTransition extTransitionID="1">
+	  <IncomingMessage>Beat</IncomingMessage>
+	  <transition>
+	  	<StartState>listen</StartState>
+	  	<NextState>SendOffBeat</NextState>
+	  </transition>
+	  <scheduleIndicator>false</scheduleIndicator>
+	</ExternalTransition>
+</deltext>
+</atomicType>
