@@ -21,18 +21,18 @@ public final class Matrix {
     public static final int TYPE_SORTED_UNIFORM_ROWS    = 6;
     
     public static final String MATRIX_DELIM = "&";
-    public static final String ROW_DELIM = ":";
-    public static final String COL_DELIM = ";";
+    public static final String ROW_DELIM    = ":";
+    public static final String COL_DELIM    = ";";
     
     
-    private final int mRows;
-    private final int mCols;
-    private final int[][] mMatrix;
+    private final int       mRows;
+    private final int       mCols;
+    private final int[][]   mMatrix;
     
     public Matrix(int[][] matrix) {
         mMatrix = matrix;
-        mRows = matrix.length;
-        mCols = matrix[0].length;
+        mRows   = matrix.length;
+        mCols   = matrix[0].length;
     }
     
     public Matrix(int rows, int columns, int minValue, int maxValue, int type) 
@@ -46,11 +46,11 @@ public final class Matrix {
         
         // Initialize matrix
         mMatrix = new int[rows][columns];
-        mRows = rows;
-        mCols = columns;
+        mRows   = rows;
+        mCols   = columns;
         
-        int[] values;
-        int value;
+        int[]   values;
+        int     value;
         
         // Handle special case.
         if (minValue == maxValue || type == TYPE_UNIFORM) {
@@ -107,10 +107,10 @@ public final class Matrix {
     }
     
     public Matrix(String matrixString) {
-        String[] rows = matrixString.split(ROW_DELIM); 
+        String[] rows   = matrixString.split(ROW_DELIM); 
         String[] values = rows[0].split(COL_DELIM);    
-        mRows = rows.length;
-        mCols = values.length;
+        mRows   = rows.length;
+        mCols   = values.length;
         mMatrix = new int[mRows][mCols];        
         for (int i = 0; i < rows.length; ++i) {            
             values = rows[i].split(COL_DELIM);
@@ -363,8 +363,6 @@ public final class Matrix {
      * out evenly between the minimum (inclusive) and maximum (exclusive).
      */ 
     private int[] makeSortedArray(int length, int min, int max) {        
-        if (length < 1 || max < min) return null;
-        
         int     numValues       = (max - min);
         float   scalingFactor   = ((float) numValues) / ((float)(length));
         int[]   sortedArray     = new int[length];
