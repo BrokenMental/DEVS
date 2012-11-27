@@ -10,10 +10,13 @@ class Settings {
     
     /*
      * Below are settings that can be adjusted to modify the implementation.
+     * 
+     * NOTE: Project must be CLEANED before changes take effect.
      */
     
     // If there are more slaves than rows in matrix1, the excess number
-    // of slaves are ignored. There must be at least one slave.
+    // of slaves are ignored. Computer.java enforces a minimum of 1 and a
+    // maximum of 20.
     static final int NUM_SLAVES             = 3;
 
     static final int MATRIX1_ROWS           = 100;

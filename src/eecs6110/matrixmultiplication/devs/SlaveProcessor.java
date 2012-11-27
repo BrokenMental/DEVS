@@ -8,7 +8,7 @@ import simView.ViewableAtomic;
 
 public class SlaveProcessor extends ViewableAtomic {       
     public static final String DEFAULT_NAME = SlaveProcessor.class.getSimpleName();
-    public static final String OUTPUT_MASTER = "Matrix";
+    public static final String OUTPUT_MASTER = "Product";
     public static final String INPUT_MASTER = "Matrices";
     
     private String mOutput;    

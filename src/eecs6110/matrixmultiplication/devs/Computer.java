@@ -12,7 +12,12 @@ public class Computer extends ViewableDigraph {
         
         MasterProcessor masterProcessor = new MasterProcessor();
         
-        mSlaveProcessors = new SlaveProcessor[Settings.NUM_SLAVES];
+        int numSlaves = Settings.NUM_SLAVES;
+        if (numSlaves < 1) numSlaves = 1;
+        else if (numSlaves > 20) numSlaves = 20;
+        
+        mSlaveProcessors = new SlaveProcessor[numSlaves];
+        
         
         add(masterProcessor);
         

@@ -11,7 +11,7 @@ import simView.ViewableAtomic;
 public class MasterProcessor extends ViewableAtomic {       
     public static final String DEFAULT_NAME = MasterProcessor.class.getSimpleName();        
     public static final String OUTPUT_SLAVES = "Matrices";
-    public static final String INPUT_SLAVE = "Matrix";
+    public static final String INPUT_SLAVE = "Product";
     
     
     private final int mNumSlaves;
