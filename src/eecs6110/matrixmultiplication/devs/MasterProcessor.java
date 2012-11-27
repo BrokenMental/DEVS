@@ -131,7 +131,7 @@ public class MasterProcessor extends ViewableAtomic {
     }
     
     private String getOutput(int slave) {                
-        String output = mMatrix1Parts[slave].toString();         
+        String output = Matrix.toString(mMatrix1Parts[slave], mMatrix2);
         mSlaveStartTime[slave] = System.nanoTime();
         return output;
     }   
