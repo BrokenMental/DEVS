@@ -53,7 +53,7 @@ public final class Matrix {
         int     value;
         
         // Handle special case.
-        if (minValue == maxValue || type == TYPE_UNIFORM) {
+        if ((type != TYPE_IDENTITY && minValue == maxValue) || type == TYPE_UNIFORM) {
             for (int i = 0; i < rows; ++i) {                    
                 for (int j = 0; j < columns; ++j) {
                     mMatrix[i][j] = minValue;
@@ -120,6 +120,18 @@ public final class Matrix {
         }
     }
     
+    /** Create a matrix by copying another matrix. */
+    public Matrix(Matrix matrix) {   
+        mRows = matrix.rows();
+        mCols = matrix.columns();
+        mMatrix = new int[mRows][mCols];                
+        for (int i = 0; i < mRows; ++i) {
+            for (int j = 0; j < mCols; ++j) {
+                mMatrix[i][j] = matrix.get()[i][j];
+            }
+        }
+    }
+    
     /** Return the number of rows in the matrix */
     public int rows() {
         return mRows;
@@ -133,17 +145,6 @@ public final class Matrix {
     /** Returns the internal matrix used by this object. */
     public int[][] get() {
         return mMatrix;
-    }
-    
-    /** Returns a matrix object containing a copy of the internal matrix. */
-    public Matrix copy() {
-        int[][] copy = new int[mRows][mCols];                
-        for (int i = 0; i < mRows; ++i) {
-            for (int j = 0; j < mCols; ++j) {
-                copy[i][j] = mMatrix[i][j];
-            }
-        }
-        return new Matrix(copy);
     }
 
     /** Transpose the internal matrix */
@@ -240,7 +241,7 @@ public final class Matrix {
         
         // Handle special case 
         if (maxRowsPerMatrix >= mRows) {
-            return new Matrix[] {copy()};
+            return new Matrix[] {new Matrix(this)};
         }
         
         int fullMatrices = mRows / maxRowsPerMatrix;
@@ -294,7 +295,7 @@ public final class Matrix {
         
         // Handle special case
         if (maxNumParts == 1) {
-            return new Matrix[] {copy()};
+            return new Matrix[] {new Matrix(this)};
         }
         
         int rowsPerMatrix = mRows / maxNumParts;        
@@ -374,7 +375,7 @@ public final class Matrix {
         return sortedArray;                
     }
     
-    /** Returns an integer in the range min <= number <= max */
+    /** Returns an integer between min and max (inclusive of both). */
     private int getRandomInteger(int min, int max) {
         return min + (int) (Math.random() * ((max - min) + 1));
     }
