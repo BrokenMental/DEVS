@@ -5,42 +5,56 @@ import simView.ViewableComponent;
 import simView.ViewableDigraph;
 
 public class Computer extends ViewableDigraph {  
+    static final String DEFAULT_NAME = Computer.class.getSimpleName();
+    
     private final SlaveProcessor[] mSlaveProcessors;
+    private final int mNumSlaves;
     
     public Computer() {
-        super("Computer");
+        super(DEFAULT_NAME);
+        if (Settings.DEBUG) System.out.println(getName() + ": [constructor]");        
         
-        MasterProcessor masterProcessor = new MasterProcessor();
+        if      (Settings.NUM_SLAVES < 1)   mNumSlaves = 1;        
+        else if (Settings.NUM_SLAVES > 20)  mNumSlaves = 20;
+        else                                mNumSlaves = Settings.NUM_SLAVES;
         
-        int numSlaves = Settings.NUM_SLAVES;
-        if (numSlaves < 1) numSlaves = 1;
-        else if (numSlaves > 20) numSlaves = 20;
+        mSlaveProcessors = new SlaveProcessor[mNumSlaves];
         
-        mSlaveProcessors = new SlaveProcessor[numSlaves];
-        
+        MasterProcessor masterProcessor = new MasterProcessor(mNumSlaves);
         
         add(masterProcessor);
         
+        // Add slave processors to layout and add connections to master processor.
         for (int i = 0; i < mSlaveProcessors.length; ++ i) {
             mSlaveProcessors[i] = new SlaveProcessor(i);
-            add(mSlaveProcessors[i]);
-            addCoupling(masterProcessor, MasterProcessor.OUTPUT_SLAVES + i, 
+            add(mSlaveProcessors[i]);            
+            addCoupling(masterProcessor, MasterProcessor.OUTPUT_SLAVE + i, 
                     mSlaveProcessors[i], SlaveProcessor.INPUT_MASTER);
             addCoupling(mSlaveProcessors[i], SlaveProcessor.OUTPUT_MASTER,
-                    masterProcessor, MasterProcessor.INPUT_SLAVE + i);
+                    masterProcessor, MasterProcessor.INPUT_SLAVES + i);
         }
+        
         initialize();        
     }
 
     @Override
-    public void layoutForSimView() {
+    public void layoutForSimView() {        
+        if (Settings.DEBUG) System.out.println(getName() + ": layoutForSimView()");
+        
+        int masterLeft   = 50;
+        int slavesLeft   = masterLeft + 250;
+        int slavesMargin = 50;
+        int masterTop    = slavesMargin * (mNumSlaves + 1) / 2;
+        
+        
         if (withName(MasterProcessor.DEFAULT_NAME) != null) {
-             ((ViewableComponent) withName(MasterProcessor.DEFAULT_NAME)).setPreferredLocation(new Point(50, 50));
+             ((ViewableComponent) withName(MasterProcessor.DEFAULT_NAME)).setPreferredLocation(new Point(masterLeft, masterTop));
         }
         
         for (int i = 0; i < mSlaveProcessors.length; ++ i) {
             if (withName(mSlaveProcessors[i].getName()) != null) {
-                 ((ViewableComponent) withName(mSlaveProcessors[i].getName())).setPreferredLocation(new Point(300, 50 * i));
+                 ((ViewableComponent) withName(mSlaveProcessors[i].getName()))
+                         .setPreferredLocation(new Point(slavesLeft, slavesMargin * (i + 1)));
             }
         }
     }    

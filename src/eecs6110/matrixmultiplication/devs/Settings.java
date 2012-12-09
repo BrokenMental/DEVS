@@ -32,4 +32,7 @@ class Settings {
     static final int MATRIX2_MAX_VALUE      = 100;
     static final int MATRIX2_TYPE           = Matrix.TYPE_RANDOM;
     static final int MATRIX2_MODIFICATION   = MATRIX_MODIFICATION_NONE;
+    
+    // Show debug messages
+    static final boolean DEBUG = false;
 }

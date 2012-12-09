@@ -65,7 +65,7 @@ public class Cache extends ViewableAtomic {
         mCache = new int[mSets][mSetAssociativity];
 
         addInport(INPUT_ADDRESS);
-        addTestInput(INPUT_ADDRESS, new entity(INPUT_ADDRESS));
+//        addTestInput(INPUT_ADDRESS, new entity(INPUT_ADDRESS));
         
         addOutport(OUTPUT_RESULT);
     }
@@ -202,6 +202,7 @@ public class Cache extends ViewableAtomic {
     
     @Override
     public message out() {
+        System.out.println(getName() + ": out()");
         message m = new message();
         if (phaseIs("Active")) {
             String result = mAttempts + " attempts, " + mMisses + " misses";

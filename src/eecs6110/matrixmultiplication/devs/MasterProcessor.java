@@ -4,95 +4,98 @@ import GenCol.entity;
 import eecs6110.matrixmultiplication.Matrix;
 import eecs6110.matrixmultiplication.Matrix.InvalidMatrixException;
 import genDevs.modeling.message;
-import java.util.ArrayList;
-import java.util.List;
 import simView.ViewableAtomic;
 
 public class MasterProcessor extends ViewableAtomic {       
-    public static final String DEFAULT_NAME = MasterProcessor.class.getSimpleName();        
-    public static final String OUTPUT_SLAVES = "Matrices";
-    public static final String INPUT_SLAVE = "Product";
+    static final String DEFAULT_NAME = MasterProcessor.class.getSimpleName();        
+    static final String OUTPUT_SLAVE = "Matrices";
+    static final String INPUT_SLAVES = "Product";
     
     
-    private final int mNumSlaves;
+    private final int    mNumSlaves;
     private final long[] mSlaveStartTime;
     
-    private Matrix mMatrix1;
-    private Matrix mMatrix2;    
+    private Matrix   mMatrix1;
+    private Matrix   mMatrix2;    
     private Matrix[] mMatrix1Parts;
     
-    public MasterProcessor() {
-        this(DEFAULT_NAME);
-    }
-    
-    public MasterProcessor(String name) {
-        super(name);      
+    public MasterProcessor(int numSlaves) {
+        super(DEFAULT_NAME);      
+        if (Settings.DEBUG) System.out.println(getName() + ": [constructor] | phase = " + getPhase());
         
-        mNumSlaves = Settings.NUM_SLAVES;  
+        mNumSlaves = numSlaves;  
         mSlaveStartTime = new long[mNumSlaves];
         
+        // Initialize matrices
         try {
             createMatrices();
             mMatrix1Parts = mMatrix1.splitIntoParts(mNumSlaves);
-            showMatrices();
+            if (Settings.DEBUG) showMatrices();
         }
         catch(InvalidMatrixException e) {
             System.err.println(e.getMessage());
         }
         
-        for (int i = 0; i < mNumSlaves; ++i) {
-            addInport(INPUT_SLAVE + i);
-            addTestInput(INPUT_SLAVE + i, new entity(INPUT_SLAVE + i));
-            addOutport(OUTPUT_SLAVES + i);
+//        addInport(INPUT_SLAVES);
+        addTestInput(INPUT_SLAVES, new entity(INPUT_SLAVES));
+                
+        // Add input port for slave processors.        
+        for (int i = 0; i < mNumSlaves; ++i) {              
+            addInport(INPUT_SLAVES + i);
+            addOutport(OUTPUT_SLAVE + i);
+//            addTestInput(INPUT_SLAVES + i, new entity(INPUT_SLAVES + i));
         }
     }
 
     @Override
     public void initialize() {
-        System.out.println(getName() + ": initialize()");                
-        passivateIn("passive");        
+        if (Settings.DEBUG) System.out.println(getName() + ": initialize() | phase = " + getPhase());                
+        passivateIn(Devs.PASSIVE);        
     }
 
     @Override
     public void deltint() { 
-        System.out.println(getName() + ": deltint()");
-        if (phaseIs("InjectDet")) {
-            System.out.println(getName() + ": deltint() -> InjectDet");
-            passivateIn("passive");
+        if (Settings.DEBUG) System.out.println(getName() + ": deltint() | phase = " + getPhase());
+        if (phaseIs(Devs.INJECT_DETECT)) {            
+            passivateIn(Devs.PASSIVE);
         }
     }
 
     @Override
     public void deltext(double e, message x) {
-        System.out.println(getName() + ": deltext()");
+        if (Settings.DEBUG) System.out.println(getName() + ": deltext() | phase = " + getPhase());        
         String input;
         for (int i = 0; i < x.getLength(); ++i) {
             for (int j = 0; j < mNumSlaves; ++j) {
-                if(messageOnPort(x, INPUT_SLAVE + j, i)) {
-                    System.out.println(getName() + ": deltext() -> messageOnPort()");
-                    input = x.getValOnPort(INPUT_SLAVE + j, i).getName();
-                    processInput(input, j);
-                    holdIn("active", 1);                                   
+                if (messageOnPort(x, INPUT_SLAVES + j, i)) {
+                    if (Settings.DEBUG) System.out.println(getName() + ": deltext() -> messageOnPort() " + i + " " + j);
+                    input = x.getValOnPort(INPUT_SLAVES + j, i).getName();
+                    processInput(input, j);                        
+                    holdIn(Devs.ACTIVE, 1);                                
                 }
             }           
-        }
+        }        
+//        Continue(e);
+        holdIn(Devs.ACTIVE, 1);  
     }
 
     @Override
     public message out() {
-        System.out.println(getName() + ": out()");
+        if (Settings.DEBUG) System.out.println(getName() + ": out() | phase = " + getPhase());
         message m = new message();
-        if (phaseIs("Active")) {    
-            System.out.println(getName() + ": out() -> phaseIs(Active)");
-            for (int i = 0; i < mNumSlaves; ++i) {
-                entity e = new entity(getOutput(i));
-                m.add(makeContent(OUTPUT_SLAVES + i, e));
+        if (phaseIs(Devs.ACTIVE)) {            
+            String output;
+            for (int i = 0; i < mNumSlaves; ++i) {                
+                output = getOutput(i);
+                entity e = new entity(output);
+                m.add(makeContent(OUTPUT_SLAVE + i, e));
             }
         }
         return m;
     }
     
     private void createMatrices() throws InvalidMatrixException {        
+        if (Settings.DEBUG) System.out.println(getName() + ": createMatrices() | phase = " + getPhase());
         mMatrix1 = new Matrix(
                 Settings.MATRIX1_ROWS,      Settings.MATRIX1_COLS, 
                 Settings.MATRIX1_MIN_VALUE, Settings.MATRIX1_MAX_VALUE, 
@@ -123,6 +126,7 @@ public class MasterProcessor extends ViewableAtomic {
     }
     
     private void processInput(String input, int slave) {
+        if (Settings.DEBUG) System.out.println(getName() + ": processInput() " + slave + " | phase = " + getPhase());
         if (mSlaveStartTime[slave] > 0) {
             long execTime = System.nanoTime() - mSlaveStartTime[slave];
             System.out.println("Slave " + slave + " execution time: "
@@ -130,13 +134,15 @@ public class MasterProcessor extends ViewableAtomic {
         }
     }
     
-    private String getOutput(int slave) {                
+    private String getOutput(int slave) {  
+        if (Settings.DEBUG) System.out.println(getName() + ": getOutput() " + slave + "  | phase = " + getPhase());
         String output = Matrix.toString(mMatrix1Parts[slave], mMatrix2);
         mSlaveStartTime[slave] = System.nanoTime();
         return output;
     }   
     
-    private void showMatrices() {        
+    private void showMatrices() { 
+        if (Settings.DEBUG) System.out.println(getName() + ": showMatrices() | phase = " + getPhase());
         System.out.println(mMatrix1.toString());
         System.out.println(mMatrix2.toString());
         for (Matrix m : mMatrix1Parts) {
