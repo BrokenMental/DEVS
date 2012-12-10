@@ -1,4 +1,4 @@
-package eecs6110.matrixmultiplication;
+package jacobphillips;
 
 import java.util.Random;
 

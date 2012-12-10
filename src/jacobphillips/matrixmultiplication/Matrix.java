@@ -1,4 +1,4 @@
-package eecs6110.matrixmultiplication;
+package jacobphillips.matrixmultiplication;
 
 /** 
  * Class for generating and manipulating matrices.

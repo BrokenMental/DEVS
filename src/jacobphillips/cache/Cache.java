@@ -1,4 +1,4 @@
-package eecs6110.cacheexample;
+package jacobphillips.cache;
 
 import GenCol.entity;
 import genDevs.modeling.message;

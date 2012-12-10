@@ -1,7 +1,8 @@
-package eecs6110.cacheexample;
+package jacobphillips.cache;
 
 import GenCol.entity;
 import genDevs.modeling.message;
+import jacobphillips.RandomNumberGenerator;
 import simView.ViewableAtomic;
 
 public class Processor extends ViewableAtomic {
@@ -20,7 +21,7 @@ public class Processor extends ViewableAtomic {
     
     public Processor(String name) {
         super(name);        
-        mAddresses = new RandomNumberGenerator(Computer.MAX_ADDRESS);        
+        mAddresses = new RandomNumberGenerator();        
         addOutport(OUTPUT_ADDRESS);
         addInport(INPUT_DUMMY);
         addTestInput(INPUT_DUMMY, new entity(INPUT_DUMMY));
@@ -52,7 +53,7 @@ public class Processor extends ViewableAtomic {
     public message out() {
         message m = new message();
         if (phaseIs("Active")) {            
-            int address = mAddresses.getInt();
+            int address = mAddresses.getInt(Computer.MAX_ADDRESS);
             entity e = new entity(String.valueOf(address));
             m.add(makeContent(OUTPUT_ADDRESS, e));
             ++mCount;

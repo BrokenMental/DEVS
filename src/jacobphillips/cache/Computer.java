@@ -1,6 +1,6 @@
-package eecs6110.cacheexample;
+package jacobphillips.cache;
 
-import eecs6110.cacheexample.Cache.InvalidCacheException;
+import jacobphillips.cache.Cache.InvalidCacheException;
 import java.awt.Point;
 import simView.ViewableComponent;
 import simView.ViewableDigraph;

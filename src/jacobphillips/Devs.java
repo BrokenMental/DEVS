@@ -1,8 +1,9 @@
-package eecs6110.matrixmultiplication.devs;
+package jacobphillips;
 
-/** Class to hold string constants used in the DEVS system */
+/** Class to hold constants used by the underlying DEVS environment. */
 public class Devs {
     public static final String ACTIVE           = "active";
     public static final String PASSIVE          = "passive";
+    /** Not yet confirmed */
     public static final String INJECT_DETECT    = "InjectDet";
 }
