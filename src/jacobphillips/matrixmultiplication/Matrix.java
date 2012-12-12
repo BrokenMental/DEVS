@@ -7,12 +7,6 @@ package jacobphillips.matrixmultiplication;
  * can be chained (e.g. matrix.transpose().reverse().get();).
  */
 public final class Matrix {
-    public static class InvalidMatrixException extends Exception {
-        public InvalidMatrixException(String msg) {
-            super(msg);
-        }
-    }    
-    
     public static final int TYPE_RANDOM                 = 1;
     public static final int TYPE_IDENTITY               = 2;
     public static final int TYPE_SORTED                 = 3;
@@ -35,13 +29,16 @@ public final class Matrix {
         mCols   = matrix[0].length;
     }
     
-    public Matrix(int rows, int columns, int minValue, int maxValue, int type) 
-            throws InvalidMatrixException {        
+    public Matrix(int rows, int columns, int minValue, int maxValue, int type) {        
         // Check arguments.
         if (rows < 1 || columns < 1 || minValue > maxValue) {
-            throw new InvalidMatrixException("A matrix must have"
+            System.err.println("A matrix must have"
                     + " a positive number of rows and columns,"
                     + " and a minValue <= maxValue.");
+            mMatrix = null;
+            mRows = 0;
+            mCols = 0;                    
+            return;
         }
         
         // Initialize matrix
@@ -175,11 +172,12 @@ public final class Matrix {
      * Throws an exception if the given matrix doesn't have the same
      * number of rows as the internal matrix has columns.
      */
-    public Matrix multiplyBy(Matrix matrix) throws InvalidMatrixException {        
+    public Matrix multiplyBy(Matrix matrix) {        
         if (matrix == null || matrix.rows() != mCols) {
-            throw new InvalidMatrixException("Can only multiply by a matrix"
+            System.err.println("Can only multiply by a matrix"
                     + " with the same number of rows as the internal matrix"
                     + " has columns (" + mCols + ").");
+            return null;
         }            
         int[][] product = new int[mRows][matrix.columns()];
         int[][] m2 = matrix.get();
@@ -198,11 +196,12 @@ public final class Matrix {
      * row by row. The given matrix must have the same number of 
      * columns as the internal one.
      */
-    public Matrix join(Matrix matrix) throws InvalidMatrixException {
+    public Matrix join(Matrix matrix) {
         if (matrix == null || matrix.columns() != mCols) {
-            throw new InvalidMatrixException("Can only join with a matrix"
+            System.err.println("Can only join with a matrix"
                     + " having the same number of columns as the internal "
                     + "matrix (" + mCols + ").");
+            return null;
         }
         int[][] joined = new int[mRows + matrix.rows()][mCols];
         int[][] m2 = matrix.get();
@@ -225,7 +224,7 @@ public final class Matrix {
     }
     
     /** Alias of join(). */
-    public Matrix append(Matrix matrix) throws InvalidMatrixException {
+    public Matrix append(Matrix matrix) {
         return join(matrix);
     }
     
@@ -234,9 +233,9 @@ public final class Matrix {
      * The given number of rows in each resulting matrix is a maximum and
      * must be at least 1. Left over rows will be put into an extra matrix.
      */
-    public Matrix[] splitByRows(int maxRowsPerMatrix) throws InvalidMatrixException {
+    public Matrix[] splitByRows(int maxRowsPerMatrix) {
         if (maxRowsPerMatrix < 1) {
-            throw new InvalidMatrixException("maxRowsPerMatrix must be > 0");
+            System.err.println("maxRowsPerMatrix must be > 0");
         }
         
         // Handle special case 
@@ -288,9 +287,9 @@ public final class Matrix {
      * more than there are rows in the matrix, the number of matrices
      * returned will be less than the number of parts given.
      */
-    public Matrix[] splitIntoParts(int maxNumParts) throws InvalidMatrixException {
+    public Matrix[] splitIntoParts(int maxNumParts) {
         if (maxNumParts < 1) {
-            throw new InvalidMatrixException("maxNumParts must be > 0");
+            System.err.println("maxNumParts must be > 0");
         }
         
         // Handle special case

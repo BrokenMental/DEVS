@@ -2,7 +2,6 @@ package jacobphillips.matrixmultiplication;
 
 import jacobphillips.Component;
 import jacobphillips.Log;
-import jacobphillips.matrixmultiplication.Matrix.InvalidMatrixException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,27 +12,22 @@ public class MasterProcessor extends Component {
     private static final String INPUT_SLAVE  = "Product";
 
     private Matrix   mMatrix1;
-    private Matrix   mMatrix2;    
+    private Matrix   mMatrix2;
     private Matrix[] mMatrix1Parts;
-
-    private final long[] mSlaveStartTimes;
     
     public MasterProcessor() {
-        super(DEFAULT_NAME);       
-
-        mSlaveStartTimes = new long[Settings.NUM_SLAVES];
-        try {
-            createMatrices();
-            mMatrix1Parts = mMatrix1.splitIntoParts(Settings.NUM_SLAVES);
-            showMatrices();
-        }
-        catch(InvalidMatrixException e) {
-            Log.e(getName(), e.getMessage());
-        }
+        this(DEFAULT_NAME);
     }
     
-    private void createMatrices() throws InvalidMatrixException {        
-        Log.v(getName(), "createMatrices()");
+    public MasterProcessor(String name) {
+        super(name); 
+        setClockLimit(Settings.CLOCK_LIMIT);
+        createMatrices();
+        System.out.println(mMatrix1.toString());
+    }
+    
+    private void createMatrices() {        
+        Log.v(getClock(), getName(), "createMatrices()");
         mMatrix1 = new Matrix(
                 Settings.MATRIX1_ROWS,      Settings.MATRIX1_COLS, 
                 Settings.MATRIX1_MIN_VALUE, Settings.MATRIX1_MAX_VALUE, 
@@ -61,51 +55,56 @@ public class MasterProcessor extends Component {
                 mMatrix2 = mMatrix2.reverse();
                 break;
         }       
+        
+        mMatrix1Parts = mMatrix1.splitIntoParts(Settings.NUM_SLAVES);
+        showMatrices();
     }
 
     private void showMatrices() {
-        Log.v(getName(), "showMatrices()");
-        Log.i(getName(), mMatrix1.toString());
-        Log.i(getName(), mMatrix2.toString());        
-        for (Matrix m : mMatrix1Parts) {
-            Log.i(getName(), m.toString());
+        if (Log.getLevel() < Log.VERBOSE) return;
+        Log.v(getClock(), getName(), "showMatrices()");
+        Log.v(getClock(), getName(), "Matrix 1: " + mMatrix1.toString());
+        Log.v(getClock(), getName(), "Matrix 2: " + mMatrix2.toString());        
+        for (int i = 0; i < mMatrix1Parts.length; ++i) {
+            Log.v(getClock(), getName(), "Matrix 1 part " + (i + 1) + ": " + mMatrix1Parts[i].toString());
         }
     }
     
     @Override
-    protected List<String> initializeInputPorts() {
-        Log.v(getName(), "initializeInputPorts()");
+    protected String[] onDefineInputs() {
+        Log.v(getClock(), getName(), "onDefineInputs()");
         List<String> inputs = new ArrayList<String>(Settings.NUM_SLAVES); 
         for (int i = 0; i < Settings.NUM_SLAVES; ++i) {
             inputs.add(INPUT_SLAVE + i);
         }
-        return inputs;
+        return inputs.toArray(new String[inputs.size()]);
     }
     
     @Override
-    protected List<String> initializeOutputPorts() {
-        Log.v(getName(), "initializeOutputPorts()");
+    protected String[] onDefineOutputs() {
+        Log.v(getClock(), getName(), "onDefineOutputs()");
         List<String> outputs = new ArrayList<String>(Settings.NUM_SLAVES); 
         for (int i = 0; i < Settings.NUM_SLAVES; ++i) {
             outputs.add(OUTPUT_SLAVE + i);
         }
-        return outputs;
+        return outputs.toArray(new String[outputs.size()]);
     }
 
     @Override
-    protected void onInput(int portIndex, String input) {
-        Log.v(getName(), "onInput()");
-        if (mSlaveStartTimes[portIndex] > 0) {
-            Log.i(getName(), "Slave " + portIndex + " execution time: "
-                + (System.nanoTime() - mSlaveStartTimes[portIndex]) + " ns");
-        }
+    protected void onInputReceived(int index, String input) {
+        Log.v(getClock(), getName(), "onInputReceived()");
+        
     }
 
     @Override
-    protected String onOutput(int portIndex) {
-        Log.v(getName(), "onOutput()");
-        String output = Matrix.toString(mMatrix1Parts[portIndex], mMatrix2);
-        mSlaveStartTimes[portIndex] = System.nanoTime();
-        return output;
+    protected String onOutputRequested(int index) {
+        Log.v(getClock(), getName(), "onOutputRequested()");     
+        if (Settings.RECREATE_MATRICES) createMatrices();        
+        return Matrix.toString(mMatrix1Parts[index], mMatrix2);
+    }
+
+    @Override
+    protected void onClockLimitReached() {
+        Log.v(getClock(), getName(), "onClockLimitReached()");        
     }
 }

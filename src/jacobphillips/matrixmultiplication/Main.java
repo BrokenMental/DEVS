@@ -1,19 +1,24 @@
 package jacobphillips.matrixmultiplication;
 
+import jacobphillips.Component;
 import jacobphillips.ComponentGroup;
 import jacobphillips.Log;
+import java.awt.Dimension;
 import java.awt.Point;
-import java.util.List;
 
 public class Main extends ComponentGroup {  
-    private static final String DEFAULT_NAME = Main.class.getSimpleName();
+    private static final String NAME = "Matrix Multiplication";
     
     private MasterProcessor mMaster;
     private SlaveProcessor[] mSlaves;
     
+    public Main() {
+        super(NAME);
+    }
+    
     @Override
-    protected void createChildren() {
-        Log.v(getName(), "createChildren()");
+    protected void onCreateChildComponents() {
+        Log.v(getName(), "onCreateChildComponents()");
         mMaster = new MasterProcessor();
         mSlaves = new SlaveProcessor[Settings.NUM_SLAVES];
         for (int i = 0; i < Settings.NUM_SLAVES; ++ i) {
@@ -22,8 +27,8 @@ public class Main extends ComponentGroup {
     }
     
     @Override
-    protected void addChildren() {        
-        Log.v(getName(), "addChildren()");
+    protected void onAddChildComponents() {        
+        Log.v(getName(), "onAddChildComponents()");
         add(mMaster);
         for (int i = 0; i < mSlaves.length; ++ i) {
             add(mSlaves[i]);             
@@ -31,17 +36,12 @@ public class Main extends ComponentGroup {
     }
 
     @Override
-    protected void makeConnections() {
-        Log.v(getName(), "makeConnections()");
-        List<String> inputs = mMaster.getInputPorts();
-        List<String> outputs = mMaster.getOutputPorts();
-        String input, output;
-        for (int i = 0; i < mSlaves.length; ++ i) {           
-            input = mSlaves[i].getInputPorts().get(0);
-            output = mSlaves[i].getOutputPorts().get(0);
-            addCoupling(mMaster, outputs.get(i), mSlaves[i], input);
-            addCoupling(mSlaves[i], output, mMaster, inputs.get(i));
-        }  
+    protected void onAddCoupling() {
+        Log.v(getName(), "onAddCoupling()");
+        for (int i = 0; i < mSlaves.length; ++ i) {
+            addCoupling(mMaster,    mMaster.getOutputs()[i],    mSlaves[i], mSlaves[i].getInputs()[0]);
+            addCoupling(mSlaves[i], mSlaves[i].getOutputs()[0], mMaster,    mMaster.getInputs()[i]);
+        }
     }
 
     @Override
@@ -50,13 +50,18 @@ public class Main extends ComponentGroup {
         
         int masterLeft   = 50;
         int slavesLeft   = masterLeft + 250;
-        int slaveSpacing = 50;
-        int masterTop    = slaveSpacing * (mSlaves.length + 1) / 2;
+        int slaveSpacing = 50;        
+        
+        int extraInputs = (mSlaves.length - 3) < 0 ? 0 : mSlaves.length - 3; 
+        int masterTopAdjustment = extraInputs * Component.EXTRA_HEIGHT_PER_PORT / 2;
+        int masterTop    = slaveSpacing * (mSlaves.length + 1) / 2 - masterTopAdjustment;
 
         mMaster.setPreferredLocation(new Point(masterLeft, masterTop));
         for (int i = 0; i < mSlaves.length; ++ i) {
             mSlaves[i].setPreferredLocation(new Point(slavesLeft, slaveSpacing * (i + 1)));
         }
+        
+        setPreferredSize(new Dimension(slavesLeft + 300, slaveSpacing * (mSlaves.length + 2)));
     }    
 }
 
