@@ -1,0 +1,9 @@
+All results used two 100x100 matrices and were executed with the DEVS real-time factor of .1 (10 iterations per second, each run taking 10 seconds). Each result contains 99 trials (short 1!) with the given settings as well as a summary line that gives the name, minimum, maximum, and average execution times. 
+
+1p = 1 processor
+3p = 3 processors (33, 33, 34 rows, respectively)
+random = matrices filled with random numbers
+diff/same = whether new random matrices were created for each iteration
+sorted = matrices contained numbers sorted and distributed evenly from min to max (see below). 
+transposed = the first matrix was transposed (only used with sorted matrices)
+(number_number) = the minimum and maximum number allowed in the matrices.
